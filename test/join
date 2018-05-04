@@ -1,1 +1,1 @@
-curl -v -X POST -u pvining:luapluap http://localhost/join -d '{"odd":["s","l","t","m"], "even": ["p","i"," ","e"]}'
+curl -v -k -X POST -u pvining:luapluap http://localhost/join?signature=3D187A758E2F2361EA1FDE266033C367786BA025 -d '{"odd":["s","l","t","m"], "even": ["p","i"," ","e"]}'

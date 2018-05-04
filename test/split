@@ -1,1 +1,1 @@
-curl -v -X POST -u pvining:luapluap http://localhost/split -d '{"string":"split%20me"}'
+curl -v -k -X POST -u pvining:luapluap https://localhost/split?signature=04e74f3b802ff701a9b5f0b98ece0d3b4 -d '{"stringid":"split me"}'
