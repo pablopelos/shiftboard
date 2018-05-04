@@ -1,0 +1,36 @@
+#!/usr/bin/perl
+use LWP::UserAgent;
+use strict;
+
+# Get the name of this program
+my $prog= join ' ',$0,@ARGV;
+
+# Get the user name
+my $user= $ENV{USER};
+
+# Get the password name
+my $pass= $ENV{PASS};
+
+# Dump the environment to the error_log file
+#foreach my $env (keys(%ENV)) {
+#	print STDERR "$prog: $env=$ENV{$env}\n";
+#}
+
+# Accept the login if the user name matchs the password
+if ($user && $pass) {
+	my $ua = LWP::UserAgent->new;
+	my $req = HTTP::Request->new(GET => "https://interview-api.shiftboard.com/auth?username=$user&password=$pass");
+	$req->header('Accept' => 'text/html');
+	my $res = $ua->request($req);
+	
+	if ($res->is_success) {
+		#warn "Response from auth:" . $res->decoded_content;
+		exit 0;
+	} else {
+		exit 1;
+	} 
+} else {
+	print STDERR "$prog: login doesn't match password - Rejected\n";
+	exit 1;
+}
+

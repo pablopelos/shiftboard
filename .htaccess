@@ -1,0 +1,5 @@
+Options +FollowSymLinks
+RewriteEngine on
+RewriteRule split$ split.cgi
+RewriteRule join$ join.cgi
+RewriteRule lastResponse$ last_response.cgi
