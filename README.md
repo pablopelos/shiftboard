@@ -6,12 +6,12 @@ This requires apache and at least one memcached server.
 
 This also relies on perl and the following modules:
 
-..*Cache::Memcached::Fast;
-..*CGI qw(:standard);
-..*Data::Dumper;
-..*Digest::SHA qw(sha1_hex);
-..*JSON;
-..*LWP::UserAgent;
+* Cache::Memcached::Fast;
+* CGI qw(:standard);
+* Data::Dumper;
+* Digest::SHA qw(sha1_hex);
+* JSON;
+* LWP::UserAgent;
 
 Caveats:
 The unsuccessful external authentication to you service returns the 401 response code and the standard apache response page, on your instructions it said no 'data', if necessary I can remove the page portion. All other server error messages yield just the reponse code and headers and no data.
