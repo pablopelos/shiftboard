@@ -1,0 +1,4 @@
+#!/bin/bash
+cp -p ./apache/fakeauth /usr/local/bin/fakeauth
+cp -p ./*.cgi /var/www/html/
+
